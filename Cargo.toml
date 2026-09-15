@@ -1,0 +1,17 @@
+[package]
+name = "vello-leak"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+v9 = { package = "vello", version = "0.9.0", optional = true }
+v10 = { package = "vello", version = "0.10.0", optional = true }
+futures = "0.3.34"
+alloc-metrics = "0.1.1"
+
+[features]
+"v9" = ["dep:v9"]
+"v10" = ["dep:v10"]
+
+[profile.release]
+debug = 1
